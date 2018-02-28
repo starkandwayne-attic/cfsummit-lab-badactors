@@ -1,0 +1,1 @@
+web: memory_service

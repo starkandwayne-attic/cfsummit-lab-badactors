@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in `seq 1 500`;
+do
+    curl http://localhost:8081/leak
+done
