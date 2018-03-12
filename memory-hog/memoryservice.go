@@ -29,8 +29,8 @@ func leak(w http.ResponseWriter, r *http.Request) {
 			time.Sleep(1 * time.Second)
 		}
 		memory = memory
+		//return
 		time.Sleep(999 * time.Hour)
-
 		fmt.Println("end of routine")
 	}()
 	fmt.Println("returning")

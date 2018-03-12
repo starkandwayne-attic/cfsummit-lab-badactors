@@ -27,6 +27,7 @@ func leak(w http.ResponseWriter, r *http.Request) {
 			memory[i] = uint8(rand.Intn(100))
 			time.Sleep(1 * time.Second)
 		}
+		//return
 		memory = memory
 		time.Sleep(999 * time.Hour)
 
