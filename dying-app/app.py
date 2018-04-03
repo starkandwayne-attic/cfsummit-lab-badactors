@@ -4,14 +4,11 @@ import sys, os
 
 app = Flask(__name__)
 
+port = int(os.getenv("PORT", 5000))
 
 @app.route('/')
 def home():
     return ("hi there")
-
-@app.route('/landing')
-def landing():
-    return ("welcome to our landing page")
 
 @app.route('/exit')
 def stop():
@@ -19,4 +16,4 @@ def stop():
     return "goodbye"
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True,host='0.0.0.0',port=port)

@@ -1,0 +1,5 @@
+#!/bin/bash
+while :
+do
+    curl http://dying-app-unimbued-muleteer.v3.pcfdev.io/exit
+done

@@ -1,0 +1,5 @@
+---
+applications:
+- name: dying-app
+  memory: 1G
+  random-route: true
