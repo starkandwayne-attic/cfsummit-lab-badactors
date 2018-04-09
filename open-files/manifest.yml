@@ -1,0 +1,5 @@
+---
+name: reader
+buildpack: go_buildpack
+env:
+  GOPACKAGENAME: main
