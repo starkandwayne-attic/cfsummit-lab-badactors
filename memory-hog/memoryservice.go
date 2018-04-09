@@ -20,7 +20,6 @@ func leak(w http.ResponseWriter, r *http.Request) {
 		//allocated mem
 		var size uint64 = 5 * 1024 * 1024
 		memory := make([]uint8, size)
-		memory = memory
 		fmt.Println("starting")
 
 		//initialize memory
@@ -28,7 +27,6 @@ func leak(w http.ResponseWriter, r *http.Request) {
 			memory[i] = uint8(rand.Intn(100))
 			time.Sleep(1 * time.Second)
 		}
-		memory = memory
 		//return
 		time.Sleep(999 * time.Hour)
 		fmt.Println("end of routine")
