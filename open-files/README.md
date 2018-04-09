@@ -1,6 +1,6 @@
 # Open To Many Files
 
-### How to use
+### How too use
 
 ```
 cf push
