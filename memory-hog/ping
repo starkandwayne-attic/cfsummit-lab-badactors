@@ -1,5 +1,5 @@
 #!/bin/bash
 for i in `seq 1 500`;
 do
-    curl http://memory-service-polymerous-earthshaker.local.pcfdev.io/leak
+    curl memory-service-smeeky-sphericity.workshop.starkandwayne.online/leak
 done

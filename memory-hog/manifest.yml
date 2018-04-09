@@ -1,6 +1,7 @@
 ---
 applications:
-- name: memory-service
-  memory: 1G
+- name: memoryservice
+  memory: 2G
   random-route: true
-
+  command: ./memoryservice
+  buildpack: binary_buildpack
