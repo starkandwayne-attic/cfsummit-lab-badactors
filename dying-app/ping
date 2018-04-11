@@ -1,5 +1,0 @@
-#!/bin/bash
-while :
-do
-    curl dying-app-attrite-skiatron.workshop.starkandwayne.online/exit
-done

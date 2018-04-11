@@ -1,7 +1,0 @@
----
-applications:
-- name: dying-app
-  memory: 1G
-  random-route: true
-  command: python app.py
-  buildpack: python_buildpack
