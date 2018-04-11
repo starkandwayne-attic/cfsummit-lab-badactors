@@ -1,0 +1,11 @@
+applications:
+  - name: loader
+    memory: 64M
+    buildpack: go_buildpack
+    no-route: yes
+    health-check-type: process
+    env:
+      GOPACKAGENAME: github.com/starkandwayne/cfsummit-lab-badactors/loader
+
+      LOAD_TEST_MEM:   '250:https://memoryservice-triparted-snippiness.workshop.starkandwayne.online'
+      LOAD_TEST_CRASH: '250:https://dying-app-flattish-pretender.workshop.starkandwayne.online'
