@@ -1,13 +1,11 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"net/http"
 	"strings"
 	"regexp"
 	"strconv"
-	"io"
 	"os"
 )
 
@@ -25,8 +23,8 @@ func InCache(path string) bool {
 
 type Generator  []byte
 
-func (g Generator) Run(req *http.Request) io.Reader {
-	return bytes.NewBuffer(g)
+func (g Generator) Run(req *http.Request) []byte {
+	return []byte(g)
 }
 
 func NewGenerator() Generator {

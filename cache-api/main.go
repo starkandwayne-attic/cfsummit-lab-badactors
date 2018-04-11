@@ -17,7 +17,7 @@ func main() {
 		if !InCache(file) {
 			// cache the data
 			f, _ := ioutil.TempFile(CacheRoot, "cache")
-			io.Copy(f, g.Run(req))
+			f.Write(g.Run(req))
 			f.Close()
 		}
 
