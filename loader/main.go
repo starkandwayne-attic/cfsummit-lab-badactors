@@ -57,8 +57,19 @@ func main() {
 				if (n >= 1000) {
 					fmt.Printf("LOAD: GET %s\n", u)
 				}
-				r, _ := http.NewRequest("GET", u, nil)
-				go c.Do(r)
+				go func () {
+					req, err := http.NewRequest("GET", u, nil)
+					if err != nil {
+						fmt.Fprintf(os.Stderr, "GET %s failed: %s\n", u, err)
+						return
+					}
+					res, err := c.Do(req)
+					if err != nil {
+						fmt.Fprintf(os.Stderr, "GET %s failed: %s\n", u, err)
+						return
+					}
+					res.Body.Close()
+				}()
 			}
 		}(e.URL, e.N)
 	}
