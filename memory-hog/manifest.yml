@@ -5,3 +5,4 @@ applications:
   buildpack: go_buildpack
   env:
     GOPACKAGENAME: github.com/starkandwayne/cfsummit-lab-badactors/memory-hog
+    GET_ENDPOINT_URL: https://api.system.workshop.starkandwayne.online/v2/info
