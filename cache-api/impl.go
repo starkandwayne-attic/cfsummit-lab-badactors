@@ -1,6 +1,8 @@
 package main
 
 import (
+	"time"
+	"io/ioutil"
 	"fmt"
 	"net/http"
 	"strings"
@@ -56,6 +58,21 @@ func NewGenerator() Generator {
 	for i := 0; i < 8192; i++ {
 		buf[i] = byte(i % 255)
 	}
+
+	// start a canary to die within 90s of disk quota exceeded
+	go func () {
+		t := time.NewTicker(90 * time.Second)
+		for _ = range t.C {
+			fmt.Printf("checking on disk space...\n")
+			f, err := ioutil.TempFile(CacheRoot, "canary")
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "ran out of disk space: %s\n", err)
+				os.Exit(1)
+			}
+			f.Close()
+			os.Remove(f.Name())
+		}
+	}()
 
 	return Generator(buf)
 }
