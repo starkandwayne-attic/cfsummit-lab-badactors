@@ -1,7 +1,7 @@
 ---
 applications:
-- name: bad-mem
-  memory: 2G
+- name: bad-fulfil-api
+  memory: 128M
   buildpack: go_buildpack
   env:
     GOPACKAGENAME: github.com/starkandwayne/cfsummit-lab-badactors/fulfillment-api
